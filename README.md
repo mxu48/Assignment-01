@@ -1,5 +1,7 @@
 # Assignment-01 CS 245 Mina Xu
 Documentation of findings as requested in assignment description - Requirement 3:
+On Google Docs, pasted here:
+[https://docs.google.com/document/d/1hJofZzJDxh6jWICuzV41rckEKz-ae-cqxEnUAGw1U64/edit?usp=sharing]
 
 - Defend choice of in-place sorting algorithm
 
@@ -7,7 +9,7 @@ I chose to use QuickSort as my in-place sorting algorithm because in the case th
 
 - Is the algorithm you wrote faster, slower, or about the same as MergeSort?
 
-In HybridSort, I attempted to compile a list of runs (sorted sections of array), regions (unsorted sections of array), sort only the unsorted regions using QuickSort, leaving a list of sorted runs of varied size. I then continously merged adjacent runs using a merge function, updating the array and the runs list until there remained a list of a single run equating to the whole, final sorted list. 
+In HybridSort, I attempted to compile a list of runs (sorted sections of array), regions (unsorted sections of array), sort only the unsorted regions using QuickSort, leaving a list of sorted runs of varied size. I then continuously merged adjacent runs using a merge function, updating the array and the runs list until there remained a list of a single run equating to the whole, final sorted list. 
 
 The algorithm that I wrote is comparable to MergeSort when the array size is smaller, but is much slower as the array size increases. If I set my runSize to 20, I notice that when the array size is less than 500, the time to execute each HybridSort and MergeSort are about the same. However, beyond that, my HybridSort time becomes exponentially higher than the MergeSort time with each increase in array size. If I increase my runSize to be 200, 1000 or 5000, I notice that my runtime for HybridSort decreases as the runSize increases. For example, at an array size of 10,000 - a runSize of 5000 yields a runtime of 293 ms while a runSize of 500 yields a runtime of 859 ms. 
 
